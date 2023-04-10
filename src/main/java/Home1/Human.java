@@ -1,12 +1,18 @@
 package Home1;
 
+/*Класс родственник содержит краткое описание членов семьи
+    - имя человека
+    - его возраст
+ */
 public class Human {
-    private String name;
-    private Integer age;
+    private String name;    //имя члена семьи
+    private Integer age;    //возраст члена семьи
+    private String socialStatus; //социальный статус
 
-    public Human(String name, Integer age) {
+    public Human(String name, Integer age, String socialStatus) {
         this.name = name;
         this.age = age;
+        this.socialStatus = socialStatus;
     }
 
     public String getName() {
@@ -23,5 +29,13 @@ public class Human {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getSocialStatus() {
+        return socialStatus;
+    }
+
+    public void setSocialStatus(String socialStatus) {
+        this.socialStatus = socialStatus;
     }
 }
