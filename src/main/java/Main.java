@@ -3,20 +3,16 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        Shop shop = new Shop();
+        AddPhones addphone = new AddPhones();
         ArrayList<Telefon> listTelefon = new ArrayList<>();
-        shop.create(listTelefon);
+        addphone.create(listTelefon);
 
-        for (Telefon temp: listTelefon) {
-            System.out.println(temp.toString());
-        }
+        PrintPhones printPhones = new PrintPhones();
+        printPhones.printPhone(listTelefon);
 
-        shop.sell(listTelefon);
-        for (Telefon temp: listTelefon) {
-            System.out.println(temp.toString());
-        }
-
-
-
+        ShopPhone shopphone = new ShopPhone();
+        shopphone.sell(listTelefon);
+        System.out.println("\nОстались следующие телефоны: ");
+        printPhones.printPhone(listTelefon);
     }
 }

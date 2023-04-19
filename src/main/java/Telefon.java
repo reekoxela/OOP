@@ -3,7 +3,7 @@ import java.util.Objects;
 public class Telefon {
     private String nameFactory;
     private String model;
-    private double sizeDisplay;
+    private String sizeDisplay;
     private int quantityAkb;
     private String TypeOS;
     private double price;
@@ -11,7 +11,7 @@ public class Telefon {
     public Telefon() {
     }
 
-    public Telefon(String nameFactory, String model, double sizeDisplay, int quantityAkb, String typeOS, double price) {
+    public Telefon(String nameFactory, String model, String sizeDisplay, int quantityAkb, String typeOS, double price) {
         this.nameFactory = nameFactory;
         this.model = model;
         this.sizeDisplay = sizeDisplay;
@@ -28,7 +28,7 @@ public class Telefon {
         return model;
     }
 
-    public double getSizeDisplay() {
+    public String getSizeDisplay() {
         return sizeDisplay;
     }
 
@@ -49,7 +49,7 @@ public class Telefon {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Telefon telefon = (Telefon) o;
-        return Double.compare(telefon.sizeDisplay, sizeDisplay) == 0 && quantityAkb == telefon.quantityAkb && Double.compare(telefon.price, price) == 0 && Objects.equals(nameFactory, telefon.nameFactory) && Objects.equals(model, telefon.model) && Objects.equals(TypeOS, telefon.TypeOS);
+        return Objects.equals(sizeDisplay,telefon.sizeDisplay) && quantityAkb == telefon.quantityAkb && Double.compare(telefon.price, price) == 0 && Objects.equals(nameFactory, telefon.nameFactory) && Objects.equals(model, telefon.model) && Objects.equals(TypeOS, telefon.TypeOS);
     }
 
     @Override
@@ -69,6 +69,3 @@ public class Telefon {
                 '}';
     }
 }
-
-
-
